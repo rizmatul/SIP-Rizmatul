@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $table = 'student';
-    protected $fillable = ['name', 'school', 'email', 'phone', 'grade', 'department'];
+    protected $fillable = ['name', 'school', 'email', 'phone', 'grade', 'department', 'user_id'];
 
     public function getGambar()
     {

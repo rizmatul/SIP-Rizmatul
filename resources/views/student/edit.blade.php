@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail">Email</label>
-                                        <input name="email" type="text" class="form-control" id="exampleInputEmail" value="{{$student->email}}">
+                                        <input name="email" type="email" class="form-control" id="exampleInputEmail" value="{{$student->email}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPhone">Phone</label>

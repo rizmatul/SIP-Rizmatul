@@ -18,12 +18,16 @@ Route::get('/login', 'AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
 Route::get('/logout', 'AuthController@logout');
 
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/dashboard', 'DashboardController@index');
+Route::group(['middleware' => ['auth', 'CheckRole:admin']], function(){
+    
     Route::get('/student', 'StudentController@index');
     Route::post('/student/create', 'StudentController@create');
     Route::get('/student/{id}/edit', 'StudentController@edit');
     Route::post('/student/{id}/update', 'StudentController@update');
     Route::get('/student/{id}/delete', 'StudentController@delete');
     Route::get('/student/{id}/profil', 'StudentController@profil');
+});
+
+Route::group(['middleware' => ['auth', 'CheckRole:admin,user']], function(){
+    Route::get('/dashboard', 'DashboardController@index');
 });
